@@ -19,6 +19,7 @@
                         <th>E-mail</th>
                         <th>Phone Number</th>
                         <th>Town</th>
+                        <th>Action</th>
                         
                     </tr>
                 </thead>
@@ -55,9 +56,28 @@
                     </tr>
                 </tbody>
             </table>
+            
+            <div class="modal" id="modal">
+                <div class="modal-content">
+                    <header class="modal-header">
+                        <h2>New Client</h2>
+                        <span class="modal-close" id="modalClose">&#10006;</span>
+                    </header>
+                    <form class="modal-form">
+                        <input type="text" class="modal-field" placeholder="Client Name">
+                        <input type="email" class="modal-field" placeholder="Client E-mail">
+                        <input type="text" class="modal-field" placeholder="Client Phone">
+                        <input type="text" class="modal-field" placeholder="Client Town">
+                    </form>
+                    <footer>
+                        <button class="green button">Save</button>
+                        <button class="red button">Cancel</button>
+                    </footer>
+                </div>
+            </div>
         </main>
         <footer>
-
+            <p>Copyright &copy; Prof. Fernando Leonid</p>
         </footer>
         
     </body>
