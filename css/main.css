@@ -11,3 +11,10 @@
     --text-color: #FFF;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: direction;
+    font-family: 'monospace', sans-serif;
+    position: relative; 
+}
