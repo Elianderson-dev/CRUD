@@ -3,3 +3,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+:root {
+    --primary-color: #FFBA00;
+    --secundary-color: #FFF1CC;
+    --shadow-color: #CCC;
+    --text-color: #FFF;
+}
+
