@@ -57,4 +57,7 @@ footer {
         position: fixed;
         width: 100%;
     }
+    .header-title {
+        font-size: 1.5 rem;
+    }
 }
