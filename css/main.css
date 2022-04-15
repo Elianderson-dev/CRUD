@@ -60,4 +60,11 @@ footer {
     .header-title {
         font-size: 1.5 rem;
     }
+
+    main {
+        padding: 0;
+        margin: 20px 0 0 0;
+        width: 100%;
+        box-shadow: none;
+    }
 }
