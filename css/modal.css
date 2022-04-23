@@ -44,3 +44,9 @@
     user-select: none;
     cursor: pointer;
 }
+
+.modal-close:hover {
+    background-color: #FF4949;
+    color: white;
+}
+
