@@ -50,3 +50,21 @@
     color: white;
 }
 
+.modal-form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.modal-field {
+    width: calc(50% - 10%);
+    height: 40px;
+    outline-style: none;
+    border-style: none;
+    box-shadow: 0 0 2px black;
+    padding: 0 20px;
+    font-size: 1rem;
+}
+
