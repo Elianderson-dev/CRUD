@@ -23,4 +23,7 @@
     text-align: center; 
 }
 
+.records tr:hover {
+    background-color: var(--second-color);
+}
 
