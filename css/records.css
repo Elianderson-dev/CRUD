@@ -15,3 +15,12 @@
     height: 50px;
     padding-left: 20px;
 }
+
+.records th:last-child,
+.records td:last-child {
+    padding : 0;
+    min-width: 140px;
+    text-align: center; 
+}
+
+
