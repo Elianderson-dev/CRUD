@@ -31,4 +31,7 @@
     .records {
          border-spacing: 5px;
     }
+    .records thead {
+        display: none;
+    }
 }
