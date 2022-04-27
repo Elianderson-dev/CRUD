@@ -46,4 +46,7 @@
     .records td {
         margin: 10px 0;
     }
+    .record tr:hover {
+        background-color: inherit;
+    }
 }
