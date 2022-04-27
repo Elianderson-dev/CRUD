@@ -43,4 +43,7 @@
         justify-content: space-between;
         padding: 0 20px;
     }
+    .records td {
+        margin: 10px 0;
+    }
 }
