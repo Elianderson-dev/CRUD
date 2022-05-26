@@ -14,7 +14,8 @@ const tempClient = {
 	town: "Hobbiton"
 }
 // CRUD | Create Read Update Delete
-const createClient = (client)
+const createClient = (client) =>
+	localStorage.setItem("id","12122121")
 // events 
 document.getElementById("registerClient")
     .addEventListener("click", openModal)
