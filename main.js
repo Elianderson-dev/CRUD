@@ -14,13 +14,11 @@ const tempClient = {
 	town: "Hobbiton"
 }
 // CRUD | Create Read Update Delete
-
+const createClient = (client)
 // events 
 document.getElementById("registerClient")
     .addEventListener("click", openModal)
 
 document.getElementById("modalClose")
     .addEventListener("click", closeModal)
-
-
 
