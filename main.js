@@ -1,11 +1,9 @@
 "use strict"
 
 
-const openModal = () => document.getElementById("modal")
-    .classList.add("active")
+const openModal = () => document.getElementById("modal").classList.add("active")
 
-const closeModal = () => document.getElementById("modal")
-    .classList.remove("active")
+const closeModal = () => document.getElementById("modal").classList.remove("active")
 
 const tempClient = {
 	name: "Necromancer", 
@@ -13,11 +11,17 @@ const tempClient = {
 	phonenumber: "89-744333531",
 	town: "Valle"
 }
-
+console.log('oi teste')
 const getLocalStorage = () => JSON.parse(localStorage.getItem("dbClient")) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
 
 // CRUD | Create Read Update Delete
+
+const deleteClient = (index) => {
+	const dbClient = readClient()
+	dbClient.splice(index, 1)
+	setLocalStorage(dbClient)
+}
 
 const updateClient = (index, client) => {
 	const dbClient = readClient()
@@ -34,12 +38,22 @@ const dbClient = getLocalStorage()
 	setLocalStorage(dbClient)	
 }
 
+const isValidFields = () => {
+	return document.getElementById("form").reportValidity()
+}
+
+// Interaction with layout
+const saveClient = () => {
+	if (isValidFields()) {
+		console.log("signing up clients")
+
 
 // Events 
 document.getElementById("registerClient")
-    .addEventListener("click", openModal)
+	.addEventListener("click", openModal)
  
 document.getElementById("modalClose")
-    .addEventListener("click", closeModal)
+	.addEventListener("click", closeModal)
 
-
+document.getElementById("save")
+	.addEventListener("click", saveClient)
