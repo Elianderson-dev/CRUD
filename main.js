@@ -56,4 +56,4 @@ document.getElementById("modalClose")
 	.addEventListener("click", closeModal)
 
 document.getElementById("save")
-	.addEventListener("click", saveClient)
+	.addEventListener("click", saveClient)}}

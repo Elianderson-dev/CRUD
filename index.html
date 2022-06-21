@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/modal.css">
         <link rel="stylesheet" href="css/records.css">
-        <link rel="stylesheet" href="main.js">
+        <link rel="script" href="main.js">
         <script src="main.js" defer></script>
         <title>CRUD</title>
     </head>
@@ -19,7 +19,7 @@
         </header>
 
         <main>
-            <button type="button" class="button blue mobile" id="registerClient">Register Client</button>
+            <button onclick="openModal()" type="button" class="button blue mobile" id="registerClient">Register Client</button>
             <table class="records">
                 <thead>
                     <tr>
@@ -32,36 +32,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Gandalf</td>
-                        <td>TheGrayWizard@gmail.com</td>
-                        <td>(64) 89777-1465</td>
-                        <td>Valinor</td>
-                        <td>
-                            <button type="button" class="green button">Edit</button>
-                            <button type="button" class="red button">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Dain</td>
-                        <td>IronFoot@gmail.com</td>
-                        <td>(64) 99567-1222</td>
-                        <td>Iron Hills Lonely Montain</td>
-                        <td>
-                            <button type="button" class="green button">Edit</button>
-                            <button type="button" class="red button">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bilbo</td>
-                        <td>BarrelRider@gmail.com</td>
-                        <td>(64) 85732-1993</td>
-                        <td>Hobbiton</td>
-                        <td>
-                            <button type="button" class="green button">Edit</button>
-                            <button type="button" class="red button">Delete</button>
-                        </td>
-                    </tr>
                 </tbody>
             </table>
             
@@ -69,7 +39,7 @@
                 <div class="modal-content">
                     <header class="modal-header">
                         <h2>New Client</h2>
-                        <span class="modal-close" id="modalClose">&#10006;</span>
+                        <span onclick="closeModal()" class="modal-close" id="modalClose">&#10006;</span>
                     </header>
                     <form class="modal-form" id="form">
                         <input type="text" class="modal-field" placeholder="Client Name" required>
