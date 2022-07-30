@@ -11,7 +11,6 @@ const tempClient = {
 	phonenumber: "89-744333531",
 	town: "Valle"
 }
-console.log('oi teste')
 const getLocalStorage = () => JSON.parse(localStorage.getItem("dbClient")) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
 
@@ -57,3 +56,5 @@ document.getElementById("modalClose")
 
 document.getElementById("save")
 	.addEventListener("click", saveClient)}}
+
+
