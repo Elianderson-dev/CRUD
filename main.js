@@ -44,7 +44,7 @@ const isValidFields = () => {
 // Interaction with layout
 const saveClient = () => {
 	if (isValidFields()) {
-		console.log("signing up clients")
+		console.log("signing up clients")}}
 
 
 // Events 
@@ -55,6 +55,6 @@ document.getElementById("modalClose")
 	.addEventListener("click", closeModal)
 
 document.getElementById("save")
-	.addEventListener("click", saveClient)}}
+	.addEventListener("click", saveClient)
 
 
