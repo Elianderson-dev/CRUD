@@ -32,6 +32,16 @@
                     </tr>
                 </thead>
                 <tbody>
+			<tr>
+				<td>Gandalf</td>
+				<td>Wizard@gmail.com</td>
+				<td>76-999102025</td>
+				<td>Lorien gardens</td>
+				<td>
+					<button type="button" class="button green">Edit</button>
+					<button type="button" class="button red">Delete</button>
+				</td>
+			</tr>
                 </tbody>
             </table>
             
@@ -42,14 +52,14 @@
                         <span onclick="closeModal()" class="modal-close" id="modalClose">&#10006;</span>
                     </header>
                     <form class="modal-form" id="form">
-                        <input type="text" class="modal-field" placeholder="Client Name" required>
-                        <input type="email" class="modal-field" placeholder="Client E-mail" required>
-                        <input type="text" class="modal-field" placeholder="Client Phone" required>
-                        <input type="text" class="modal-field" placeholder="Client Town" required>
+                        <input type="text" id="name" class="modal-field" placeholder="Client Name" required>
+                        <input type="email" id="email" class="modal-field" placeholder="Client E-mail" required>
+                        <input type="text" id="phoneNumber" class="modal-field" placeholder="Client Phone" required>
+                        <input type="text" id="town" class="modal-field" placeholder="Client Town" required>
                     </form>
                     <footer>
-                        <button class="green button" id="save">Save</button>
-                        <button class="red button" id="cancel">Cancel</button>
+                        <button id="save" class="green button" >Save</button>
+                        <button id="cancel" class="red button" >Cancel</button>
                     </footer>
                 </div>
             </div>

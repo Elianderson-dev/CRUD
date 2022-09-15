@@ -6,10 +6,10 @@ const openModal = () => document.getElementById("modal").classList.add("active")
 const closeModal = () => document.getElementById("modal").classList.remove("active")
 
 const tempClient = {
-	name: "Necromancer", 
-	email: "littlenecro@gmail.com",
-	phonenumber: "89-744333531",
-	town: "Valle"
+	name: "Bilbo", 
+	email: "barrelRider@gmail.com",
+	phonenumber: "89-744343345",
+	town: "Hobbiton"
 }
 const getLocalStorage = () => JSON.parse(localStorage.getItem("dbClient")) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
@@ -44,7 +44,16 @@ const isValidFields = () => {
 // Interaction with layout
 const saveClient = () => {
 	if (isValidFields()) {
-		console.log("signing up clients")}}
+		const client = {
+			name: document.getElementById("name").value,
+			email: document.getElementById("email").value,
+			phone_number: document.getElementById("phoneNumber").value,
+			town: document.getElementById("town").value
+
+		}
+		createClient = (client)
+	}
+}
 
 
 // Events 
