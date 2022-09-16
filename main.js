@@ -3,7 +3,10 @@
 
 const openModal = () => document.getElementById("modal").classList.add("active")
 
-const closeModal = () => document.getElementById("modal").classList.remove("active")
+const closeModal = () => {
+	clearFields()
+	document.getElementById("modal").classList.remove("active")
+}
 
 const tempClient = {
 	name: "Bilbo", 
@@ -32,7 +35,7 @@ const updateClient = (index, client) => {
 const readClient = () => getLocalStorage()
 
 const createClient = (client) => {
-const dbClient = getLocalStorage()
+	const dbClient = getLocalStorage()
 	dbClient.push (client) 
 	setLocalStorage(dbClient)	
 }
@@ -42,6 +45,12 @@ const isValidFields = () => {
 }
 
 // Interaction with layout
+const clearFields = () => {
+	const fields = document.querySelectorAll(".modal-field")
+	fields.forEach(fields => fields.value = "")
+}
+
+
 const saveClient = () => {
 	if (isValidFields()) {
 		const client = {
@@ -49,9 +58,9 @@ const saveClient = () => {
 			email: document.getElementById("email").value,
 			phone_number: document.getElementById("phoneNumber").value,
 			town: document.getElementById("town").value
-
 		}
-		createClient = (client)
+		createClient(client)
+		closeModal()
 	}
 }
 
