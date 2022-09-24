@@ -8,12 +8,6 @@ const closeModal = () => {
 	document.getElementById("modal").classList.remove("active")
 }
 
-const tempClient = {
-	name: "Bilbo", 
-	email: "barrelRider@gmail.com",
-	phonenumber: "89-744343345",
-	town: "Hobbiton"
-}
 const getLocalStorage = () => JSON.parse(localStorage.getItem("dbClient")) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
 
@@ -68,7 +62,6 @@ const saveClient = () => {
 		else {
 			updateClient(index, client)
 			updateTable()
-
 			closeModal()
 		}
 	}
@@ -82,8 +75,8 @@ const createRow = (client, index) => {
 		<td>${client.phone_number}</td>	
 		<td>${client.town}</td>	
 		<td>
-			<button type="button" id="edit ${index}" class="button green">Edit</button>
-			<button type="button" id="delete ${index} "class="button red">Delete</button>
+			<button type="button" id="edit-${index}" class="button green">Edit</button>
+			<button type="button" id="delete-${index} "class="button red">Delete</button>
 		</td>	
 	`
 	document.querySelector("#tableClient>tbody").appendChild(newRow)
@@ -115,16 +108,21 @@ const editClient = (index) => {
 	openModal()
 }
 
-const editAndDelete = () => {
+const editAndDelete = (event) => {
 	if (event.target.type == "button") {
-		const [action, index] = event.target.id.split(" ")
 
-		if (action == "edit") {}
-		editClient(index)
-	}
-	else {
-		deleteClient(index)
-		updateTable()
+		const [action, index] = event.target.id.split("-")
+
+		if (action == "edit") {
+			editClient(index)
+		}else {
+			const client = readClient()[index]
+			const response = confirm(`Do you want to delete the user ${name}?`)
+			if (response) {
+				deleteClient(index)
+				updateTable()
+			}
+		}
 	}
 }
 
