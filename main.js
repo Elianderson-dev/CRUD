@@ -64,6 +64,26 @@ const saveClient = () => {
 	}
 }
 
+const createRow = (client) => {
+	const newRow = document.createElement("tr")
+	newRow.innerHTML = `
+		<td>${client.name}</td>
+		<td>${client.email}</td>	
+		<td>${client.phone_number}</td>	
+		<td>${client.town}</td>	
+		<td>
+			<button type="button" class="button green">Edit</button>
+			<button type="button" class="button red">Delete</button>
+		</td>	
+	`
+	document.querySelector("#tableClient>tbody").appendChild(newRow)
+}
+const updateTable = () => {
+	const dbClient = readClient()
+	dbClient.forEach(createRow)
+}
+
+updateTable()
 
 // Events 
 document.getElementById("registerClient")
