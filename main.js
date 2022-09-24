@@ -59,13 +59,22 @@ const saveClient = () => {
 			phone_number: document.getElementById("phoneNumber").value,
 			town: document.getElementById("town").value
 		}
-		createClient(client)
-		updateTable()
-		closeModal()
+		const index = document.getElementById("name").dataset.index
+		if (index == "new") {
+			createClient(client)
+			updateTable()
+			closeModal()
+		}
+		else {
+			updateClient(index, client)
+			updateTable()
+
+			closeModal()
+		}
 	}
 }
 
-const createRow = (client) => {
+const createRow = (client, index) => {
 	const newRow = document.createElement("tr")
 	newRow.innerHTML = `
 		<td>${client.name}</td>
@@ -73,8 +82,8 @@ const createRow = (client) => {
 		<td>${client.phone_number}</td>	
 		<td>${client.town}</td>	
 		<td>
-			<button type="button" class="button green">Edit</button>
-			<button type="button" class="button red">Delete</button>
+			<button type="button" id="edit ${index}" class="button green">Edit</button>
+			<button type="button" id="delete ${index} "class="button red">Delete</button>
 		</td>	
 	`
 	document.querySelector("#tableClient>tbody").appendChild(newRow)
@@ -91,6 +100,34 @@ const updateTable = () => {
 	dbClient.forEach(createRow)
 }
 
+const fillFields = (client) => {
+	document.getElementById("name").value = client.name
+	document.getElementById("email").value = client.email
+	document.getElementById("phoneNumber").value = client.phone_number
+	document.getElementById("town").value = client.town
+	document.getElementById("name").dataset.index = client.index
+}
+
+const editClient = (index) => {
+	const client = readClient()[index]
+	client.index = index
+	fillFields(client)
+	openModal()
+}
+
+const editAndDelete = () => {
+	if (event.target.type == "button") {
+		const [action, index] = event.target.id.split(" ")
+
+		if (action == "edit") {}
+		editClient(index)
+	}
+	else {
+		deleteClient(index)
+		updateTable()
+	}
+}
+
 updateTable()
 
 // Events 
@@ -103,4 +140,5 @@ document.getElementById("modalClose")
 document.getElementById("save")
 	.addEventListener("click", saveClient)
 
-
+document.querySelector("#tableClient>tbody")
+	.addEventListener("click", editAndDelete)
