@@ -131,8 +131,11 @@ updateTable()
 // Events 
 document.getElementById("registerClient")
 	.addEventListener("click", openModal)
- 
+
 document.getElementById("modalClose")
+	.addEventListener("click", closeModal)
+
+document.getElementById("cancel")
 	.addEventListener("click", closeModal)
 
 document.getElementById("save")
